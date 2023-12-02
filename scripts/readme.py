@@ -4,7 +4,7 @@ from pathlib import Path
 
 OVERALL_LEADERBOARD_RANKS = [
     58, # Day 1
-    None, # Day 2
+    16, # Day 2
     None, # Day 3
     None, # Day 4
     None, # Day 5
