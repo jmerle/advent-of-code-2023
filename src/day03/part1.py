@@ -1,5 +1,4 @@
 import sys
-from collections import *
 
 def get_adjacents(x, y, width, height):
     out = []
