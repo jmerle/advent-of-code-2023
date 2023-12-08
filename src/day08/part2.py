@@ -14,7 +14,7 @@ def main() -> None:
         src, left, right = re.findall(r"([A-Z0-9]{3})", node)
         nodes[src] = (left, right)
 
-        if src.endswith("A"):
+        if src[2] == "A":
             current.append(src)
 
     lens = []
