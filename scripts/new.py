@@ -2,7 +2,11 @@ from argparse import ArgumentParser
 from pathlib import Path
 
 PYTHON_TEMPLATE = """
+import re
 import sys
+from collections import *
+from dataclasses import *
+from math import *
 
 def main() -> None:
     data = sys.stdin.read().strip()
