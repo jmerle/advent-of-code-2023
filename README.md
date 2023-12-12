@@ -181,6 +181,20 @@ This repository contains my [Advent of Code 2023](https://adventofcode.com/2023)
             <td>69</td>
             <td>396</td>
         </tr>
+        <tr>
+            <td>
+                <a href="https://adventofcode.com/2023/day/12">Day 12</a>
+                (<a href="https://github.com/jmerle/advent-of-code-2023/tree/master/src/day12">code</a>)
+            </td>
+            <td>00:18:30</td>
+            <td>697</td>
+            <td>0</td>
+            <td>00:47:09</td>
+            <td>788</td>
+            <td>0</td>
+            <td>78</td>
+            <td>396</td>
+        </tr>
     </tbody>
 </table>
 <!-- results-end -->
