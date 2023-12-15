@@ -17,7 +17,7 @@ OVERALL_LEADERBOARD_RANKS = [
     78, # Day 12
     89, # Day 13
     78, # Day 14
-    None, # Day 15
+    73, # Day 15
     None, # Day 16
     None, # Day 17
     None, # Day 18
