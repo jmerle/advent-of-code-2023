@@ -10,7 +10,7 @@ def main() -> None:
     height = len(grid)
 
     directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-    heap = [(0, 0, 0, 0, 0)]
+    heap = [(0, 0, 0, 0, 0), (0, 0, 0, 1, 0)]
     seen = set()
 
     while len(heap) > 0:

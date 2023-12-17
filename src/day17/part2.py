@@ -10,7 +10,7 @@ def main() -> None:
     height = len(grid)
 
     directions = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-    heap = [(0, 0, 0, 1, 0)]
+    heap = [(0, 0, 0, 0, 0), (0, 0, 0, 1, 0)]
     seen = set()
 
     while len(heap) > 0:
@@ -22,11 +22,9 @@ def main() -> None:
         seen.add((x, y, direction, streak))
 
         if x == width - 1 and y == height - 1:
-            if streak < 4:
-                continue
-
-            print(heat)
-            return
+            if streak > 3:
+                print(heat)
+                return
 
         dx, dy = directions[direction]
         x += dx
