@@ -1,5 +1,4 @@
 import sys
-from collections import *
 from dataclasses import *
 from math import *
 
@@ -11,14 +10,14 @@ class FlipFlopModule:
     state: bool
     targets: list[str]
 
-    def update(self, src: str, high: bool, nxt: list[str], cycles: defaultdict[str, list[int]], presses: int) -> None:
+    def update(self, src: str, high: bool, nxt: list[str], cycles: dict[str, list[int]], presses: int) -> None:
         if high:
             return
 
         self.state = not self.state
         nxt.append(self.id)
 
-    def pulse(self, modules, nxt: list[str], cycles: defaultdict[str, list[int]], presses: int) -> None:
+    def pulse(self, modules, nxt: list[str], cycles: dict[str, list[int]], presses: int) -> None:
         for trg in self.targets:
             if trg not in modules:
                 continue
@@ -31,11 +30,11 @@ class ConjunctionModule:
     high: dict[str, bool]
     targets: list[str]
 
-    def update(self, src: str, high: bool, nxt: list[str], cycles: defaultdict[str, list[int]], presses: int) -> None:
+    def update(self, src: str, high: bool, nxt: list[str], cycles: dict[str, list[int]], presses: int) -> None:
         self.high[src] = high
         nxt.append(self.id)
 
-    def pulse(self, modules, nxt: list[str], cycles: defaultdict[str, list[int]], presses: int) -> None:
+    def pulse(self, modules, nxt: list[str], cycles: dict[str, list[int]], presses: int) -> None:
         send_high = not all(self.high.values())
 
         if send_high and self.id in check and self.id not in cycles:
@@ -54,11 +53,11 @@ class BroadcastModule:
 
     last_high: bool = False
 
-    def update(self, src: str, high: bool, nxt: list[str], cycles: defaultdict[str, list[int]], presses: int) -> None:
+    def update(self, src: str, high: bool, nxt: list[str], cycles: dict[str, list[int]], presses: int) -> None:
         self.last_high = high
         nxt.append(self.id)
 
-    def pulse(self, modules, nxt: list[str], cycles: defaultdict[str, list[int]], presses: int) -> None:
+    def pulse(self, modules, nxt: list[str], cycles: dict[str, list[int]], presses: int) -> None:
         for trg in self.targets:
             if trg not in modules:
                 continue
@@ -91,7 +90,7 @@ def main() -> None:
             if isinstance(trg_module, ConjunctionModule):
                 trg_module.high[src_module.id] = False
 
-    cycles = defaultdict(list)
+    cycles = {}
     presses = 0
 
     while len(cycles) < len(check):
