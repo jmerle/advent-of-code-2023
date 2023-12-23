@@ -25,7 +25,7 @@ OVERALL_LEADERBOARD_RANKS = [
     None, # Day 20
     98, # Day 21
     None, # Day 22
-    None, # Day 23
+    84, # Day 23
     None, # Day 24
     None, # Day 25
 ]
