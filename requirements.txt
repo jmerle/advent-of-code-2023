@@ -2,3 +2,4 @@ python-dotenv
 requests
 watchfiles
 shapely
+z3-solver
